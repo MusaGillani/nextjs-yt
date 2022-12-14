@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 type Post = {
   userId: number;
@@ -17,6 +17,17 @@ export default function Post({ post }: { post: Post }) {
     </>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { postId: "1" } },
+      { params: { postId: "2" } },
+      { params: { postId: "3" } },
+    ],
+    fallback: false,
+  };
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
