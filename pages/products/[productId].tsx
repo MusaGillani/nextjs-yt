@@ -33,6 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
+  console.log("Regnerating product", params!.productId);
   const res = await fetch(
     `http://localhost:4000/products/${params!.productId}`
   );
@@ -49,5 +50,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       product: data,
     },
+    revalidate: 10,
   };
 };
