@@ -26,6 +26,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch("http://localhost:4000/news");
   const data = await res.json();
 
+  console.log("Pre-rendering NewsArticleList");
   return {
     props: {
       articles: data,
