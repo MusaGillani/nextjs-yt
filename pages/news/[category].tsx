@@ -33,7 +33,11 @@ export default function ArticleListByCategory({
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { params } = context;
+  const { params, req, res: response, query } = context;
+  console.log(req.headers.cookie);
+  //   /news/sports?subcategory=football
+  console.log(query);
+  response.setHeader("Set-Cookie", ["name=Musa"]);
   const { category } = params!;
   // can filter data using query params on json server
   const res = await fetch(`http://localhost:4000/news?category=${category}`);
