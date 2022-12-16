@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import "../styles/globals.css";
-import "../styles/layout.css";
+import Header from "@layout/header";
+import Footer from "@layout/footer";
+import "styles/globals.css";
+import "styles/layout.css";
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
