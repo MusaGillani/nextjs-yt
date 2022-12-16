@@ -1,5 +1,18 @@
-import styles from "../styles/About.module.scss";
+import { ReactElement } from "react";
+import Footer from "../components/footer";
+import type { NextPageWithLayout } from "./_app";
 
-export default function About() {
-  return <div className={styles.highlightscss}>About page</div>;
-}
+const About: NextPageWithLayout = () => {
+  return <h1 className="content">About</h1>;
+};
+
+About.getLayout = function PageLayout(page: ReactElement) {
+  return (
+    <>
+      {page}
+      <Footer />
+    </>
+  );
+};
+
+export default About;
