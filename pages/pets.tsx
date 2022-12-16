@@ -1,10 +1,11 @@
-import Image from "next/image";
-import img from "../public/1.jpg";
+// import Image from "next/image";
+// import img from "../public/1.jpg";
 
 export default function PetsPage() {
   return (
     <div>
-      <Image
+      Pets
+      {/* <Image
         src={img}
         placeholder="blur"
         blurDataURL=""
@@ -16,7 +17,7 @@ export default function PetsPage() {
         <div key={path}>
           <Image src={`/${path}.jpg`} alt="pet" width="280" height="420" />
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
